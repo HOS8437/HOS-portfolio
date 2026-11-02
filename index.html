@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOSSEIN — Computer Engineering Student</title>
+<meta name="description" content="Portfolio of Hossein — Computer Engineering student learning C++ and the web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#home"><span class="path"></span>HOS<span class="cursor">_</span></a>
+    <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#journey">JOURNEY</a></li>
+      <li><a href="#contact" class="nav-cta">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero wrap" id="home">
+  <div class="hero-left">
+    <p class="eyebrow reveal">// HELLO, WORLD — I AM</p>
+    <h1 id="heroName">HOSSEIN</h1>
+    <p class="hello-sub reveal d1">COMPUTER ENGINEERING STUDENT</p>
+    <div class="role-line reveal d2"><span class="pfx">❯</span><span id="roleText"></span><span class="caret"></span></div>
+    <p class="lead reveal d3">I turn coffee into code and bugs into lessons. Right now I'm deep-diving into <em>C++</em> and building my foundations on the <em>web</em> — this site is my lab notebook, built by hand with zero frameworks.</p>
+    <div class="hero-actions reveal d4">
+      <a class="btn btn-solid" href="#projects">EXPLORE MY WORK ↓</a>
+      <a class="btn btn-ghost" href="#contact">SAY HELLO</a>
+    </div>
+    <div class="hero-socials reveal d4">
+      <a href="#" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V24h-4v-8.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.27 2.2-3.27 4.5V24H8V8z"/></svg></a>
+      <a href="mailto:hossi3754@gmail.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
+    </div>
+  </div>
+
+  <!-- Planet + orbiting tech ring (drag me!) -->
+  <div class="scene" id="scene" tabindex="0" aria-label="Interactive tech orbit — drag or use arrow keys to spin">
+    <div class="orbit-float"><div class="orbit-tilt" id="tilt">
+      <div class="ring ring-back clip-back"></div>
+      <div class="ring2 ring2-back clip-back"></div>
+
+      <div class="planet" aria-hidden="true">
+        <div class="surface"><div class="map"></div><div class="map"></div></div>
+        <div class="shade"></div>
+      </div>
+
+      <div class="moon-plane" aria-hidden="true"><div class="moon-orbit"><span class="moon"></span></div></div>
+
+      <div class="ring ring-front clip-front"></div>
+      <div class="ring2 ring2-front clip-front"></div>
+
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#00599C"/><text x="12" y="14.6" text-anchor="middle" font-family="Arial" font-size="7.2" font-weight="700" fill="#fff">C++</text></svg></span><span class="chip-tx">C++</span></div></div>
+
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M3 1.5h18l-1.7 18.6L12 22.5l-7.3-2.4L3 1.5z" fill="#e44d26"/><path d="M12 1.5h9l-1.7 18.6L12 22.5V1.5z" fill="#f16529"/><text x="12" y="15.6" text-anchor="middle" font-family="Arial" font-size="10" font-weight="800" fill="#fff">HTML</text></svg></span><span class="chip-tx">HTML5</span></div></div>
+
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M3 1.5h18l-1.7 18.6L12 22.5l-7.3-2.4L3 1.5z" fill="#264de4"/><path d="M12 1.5h9l-1.7 18.6L12 22.5V1.5z" fill="#2965f1"/><text x="12" y="15.6" text-anchor="middle" font-family="Arial" font-size="10" font-weight="800" fill="#fff">CSS</HTML></text></svg></span><span class="chip-tx">CSS3</span></div></div>
+
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#f7df1e"/><text x="19" y="18.4" text-anchor="end" font-family="Arial" font-size="8.4" font-weight="800" fill="#161616">JS</text></svg></span><span class="chip-tx">JS</span></div></div>
+
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24"><path fill="#3776ab" d="M12 1.5c-3.2 0-4.3 1-4.3 2.8V7h4.4v1.1H5.9c-2 0-3.4 2-3.4 4.2s1.4 4.2 3.4 4.2h1.9v-2.6c0-2.3 2-4.2 4.2-4.2h4.1c1.6 0 2.9-1.4 2.9-3V4.3c0-1.8-1.5-2.8-4-2.8H12z"/><circle cx="9.6" cy="4.5" r="1" fill="#fff"/><path fill="#ffd43b" d="M12 22.5c3.2 0 4.3-1 4.3-2.8V17h-4.4v-1.1h6.2c2 0 3.4-2 3.4-4.2s-1.4-4.2-3.4-4.2h-1.9v2.6c0 2.3-2 4.2-4.2 4.2H7.9c-1.6 0-2.9 1.4-2.9 3v2.4c0 1.8 1.5 2.8 4 2.8H12z"/><circle cx="14.4" cy="19.5" r="1" fill="#fff"/></svg></span><span class="chip-tx">PYTHON</span></div></div>
+
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24" fill="#f05032"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.579 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg></span><span class="chip-tx">GIT</span></div></div>
+
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24" fill="#e7f0f2"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span><span class="chip-tx">GITHUB</span></div></div>
+
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="#4de3b8" stroke-width="1.6"/><path d="M6.5 9.5l3.5 2.5-3.5 2.5" stroke="#4de3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 15.5h5" stroke="#ffb454" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="chip-tx">TERM</span></div></div>
+    </div></div>
+    <p class="scene-hint"><b>⟲ DRAG THE RING</b> — SPIN THE STACK</p>
+  </div>
+
+  <div class="scroll-cue">SCROLL <i></i></div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <ul>
+      <li>C++</li><li>HTML5</li><li>CSS3</li><li>JAVASCRIPT</li><li>PYTHON</li><li>GIT &amp; GITHUB</li><li>DATA STRUCTURES</li><li>ALGORITHMS</li><li>OOP</li><li>PROBLEM SOLVING</li><li>CLEAN CODE</li>
+    </ul>
+    <ul>
+      <li>C++</li><li>HTML5</li><li>CSS3</li><li>JAVASCRIPT</li><li>PYTHON</li><li>GIT &amp; GITHUB</li><li>DATA STRUCTURES</li><li>ALGORITHMS</li><li>OOP</li><li>PROBLEM SOLVING</li><li>CLEAN CODE</li>
+    </ul>
+  </div>
+</div>
+
+<main>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-index mono reveal">01 // WHO I AM</span>
+      <h2 class="mask"><span class="m-in">About Me</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-txt reveal">
+        <p>I'm a <strong>Computer Engineering student</strong> who fell in love with the moment a program finally runs. What started as curiosity about <span class="hl-m">how things work under the hood</span> turned into late nights with compilers, broken code, and the stubborn joy of fixing it.</p>
+        <p>These days my energy goes into three things: sharpening my <span class="hl-a">C++</span>, learning how the <span class="hl-a">web</span> is really built, and understanding the fundamentals — data structures, logic, and how to think like an engineer.</p>
+        <p>I believe in <strong>learning by building</strong>. Every project here, small or big, is a step on that path.</p>
+        <div class="stats">
+          <div class="stat"><b class="count" data-to="4">0</b><span>LANGUAGES TOUCHED</span></div>
+          <div class="stat"><b class="count" data-to="12">0</b><span>MINI EXPERIMENTS</span></div>
+          <div class="stat"><b>∞</b><span>CURIOSITY LEVEL</span></div>
+        </div>
+      </div>
+      <div class="code-card card reveal d2">
+        <div class="code-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="code-file">about.cpp</span><span class="code-lang">C++</span>
+        </div>
+        <div class="code-body">
+<div class="ln"><span class="cm">// compiled with curiosity, zero warnings</span></div>
+<div class="ln"><span class="kw">#include</span> <span class="str">&lt;iostream&gt;</span></div>
+<div class="ln"><span class="kw">#include</span> <span class="str">&lt;string&gt;</span></div>
+<div class="ln"> </div>
+<div class="ln"><span class="kw">struct</span> <span class="ty">Developer</span> {</div>
+<div class="ln">    <span class="ty">std::string</span> name  = <span class="str">"Hossein"</span>;</div>
+<div class="ln">    <span class="ty">std::string</span> major = <span class="str">"Computer Engineering"</span>;</div>
+<div class="ln">    <span class="ty">std::string</span> focus = <span class="str">"C++ // Web"</span>;</div>
+<div class="ln">    <span class="kw">bool</span> curious = <span class="kw">true</span>;</div>
+<div class="ln">};</div>
+<div class="ln"> </div>
+<div class="ln"><span class="kw">int</span> <span class="fn">main</span>() {</div>
+<div class="ln">    <span class="ty">Developer</span> me;</div>
+<div class="ln">    <span class="kw">while</span> (me.curious) {</div>
+<div class="ln">        me.<span class="fn">learn</span>(); me.<span class="fn">build</span>();</div>
+<div class="ln">    }</div>
+<div class="ln">    <span class="kw">return</span> <span class="num">0</span>; <span class="cm">// never reached ;)</span><span class="caret2"></span></div>
+<div class="ln">}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-index mono reveal">02 // WHAT I'M FORGING</span>
+      <h2 class="mask"><span class="m-in">Skills &amp; Learning</span></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="panel card reveal">
+        <p class="panel-title">&gt; tech_i_use()</p>
+        <div class="skill" style="--lv:40%"><div class="skill-top"><span class="nm">C++</span><span class="rt"><span class="tag core">CORE</span><span class="pct count" data-to="40">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+        <div class="skill" style="--lv:4%"><div class="skill-top"><span class="nm">HTML5</span><span class="rt"><span class="tag core">CORE</span><span class="pct count" data-to="4">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+        <div class="skill" style="--lv:3%"><div class="skill-top"><span class="nm">CSS3</span><span class="rt"><span class="tag learn">LEARNING</span><span class="pct count" data-to="3">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+        <div class="skill" style="--lv:10%"><div class="skill-top"><span class="nm">Python</span><span class="rt"><span class="tag">SIDEKICK</span><span class="pct count" data-to="10">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+        <div class="skill" style="--lv:5%"><div class="skill-top"><span class="nm">JavaScript</span><span class="rt"><span class="tag learn">LEARNING</span><span class="pct count" data-to="5">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+        <div class="skill" style="--lv:60%"><div class="skill-top"><span class="nm">Git &amp; GitHub</span><span class="rt"><span class="tag learn">LEARNING</span><span class="pct count" data-to="60">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+      </div>
+      <div class="side-stack">
+        <div class="panel card reveal d1">
+          <p class="panel-title">&gt; currently_compiling()</p>
+          <div class="focus-item"><span class="pulse"></span><div><b>C++ Deep Dive</b><span>Pointers, memory, OOP and the STL — the real stuff.</span></div></div>
+          <div class="focus-item"><span class="pulse"></span><div><b>JavaScript &amp; the DOM</b><span>Making pages move: events, logic, and this orbit you're playing with.</span></div></div>
+          <div class="focus-item"><span class="pulse"></span><div><b>Responsive CSS</b><span>Flexbox, Grid, and layouts that survive any screen size.</span></div></div>
+        </div>
+        <div class="panel card reveal d2">
+          <p class="panel-title">&gt; next_in_queue()</p>
+          <p class="queue"><b>01</b> — Data Structures &amp; Algorithms<br><b>02</b> — TypeScript<br><b>03</b> — A JS framework<br><b>04</b> — ??? (stay tuned)</p>
+        </div>
+      </div>
+    </div>
+    <div class="tools-grid">
+      <div class="tool reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 6L3 12l5 6M16 6l5 6-5 6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>VS Code</b><span>EDITOR OF CHOICE</span></div></div>
+      <div class="tool reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-4 4-7 5" stroke-linecap="round"/></svg><div><b>Git</b><span>VERSION CONTROL</span></div></div>
+      <div class="tool reveal d2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><div><b>GitHub</b><span>CODE BACKUP</span></div></div>
+      <div class="tool reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M13 8l3 3-3 3M8 16h8" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>DevTools</b><span>DEBUG MODE ON</span></div></div>
+      <div class="tool reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4" width="19" height="14" rx="2"/><path d="M2.5 8.5h19M8 21h8" stroke-linecap="round"/></svg><div><b>Windows</b><span>DAILY DRIVER</span></div></div>
+      <div class="tool reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9l3 2.5L7 14M12.5 14.5H17" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Terminal</b><span>NATURAL HABITAT</span></div></div>
+      <div class="tool reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3"/></svg><div><b>SQL (soon)</b><span>ON THE RADAR</span></div></div>
+      <div class="tool reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V5a2 2 0 012-2h13v16H6a2 2 0 00-2 2 2 2 0 002 2h13" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Docs &amp; Books</b><span>FUEL SOURCE</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-index mono reveal">03 // THINGS I'VE BUILT</span>
+      <h2 class="mask"><span class="m-in">Projects</span></h2>
+    </div>
+    <div class="projects-grid">
+      <article class="pcard card featured reveal">
+        <div class="pc-top"><span class="p-num">PROJECT 01</span><span class="badge st-live">● LIVE</span></div>
+        <h3>This Portfolio</h3>
+        <p>My playground and proof of progress — a hand-coded site with a draggable 3D orbit, scroll-triggered animations, and a typing engine. No frameworks, no templates. Every single line written to learn.</p>
+        <div class="tech-row"><span>HTML5</span><span>CSS3</span><span>JAVASCRIPT</span></div>
+        <span class="p-link">view-source: this page ↗</span>
+      </article>
+      <article class="pcard card reveal d1">
+        <div class="pc-top"><span class="p-num">PROJECT 02</span><span class="badge st-wip">⚙ IN PROGRESS</span></div>
+        <h3>Terminal Quest</h3>
+        <p>A text-based adventure game running entirely in the terminal: classes, save files, and a dragon made of pure ASCII.</p>
+        <div class="tech-row"><span>C++</span><span>OOP</span><span>FILE I/O</span></div>
+      </article>
+      <article class="pcard card reveal d2">
+        <div class="pc-top"><span class="p-num">PROJECT 03</span><span class="badge st-soon">◌ SOON</span></div>
+        <h3>Algo Sketchbook</h3>
+        <p>Sorting visualizers and data-structure experiments, documented as I learn them — my public lab notes.</p>
+        <div class="tech-row"><span>C++</span><span>PYTHON</span><span>DSA</span></div>
+      </article>
+      <article class="pcard card reveal d1">
+        <div class="pc-top"><span class="p-num">PROJECT 04</span><span class="badge st-soon">◌ SOON</span></div>
+        <h3>Uni Lab Notes</h3>
+        <p>Cleaned-up university assignments and experiments, published so future-me (and you) suffers less.</p>
+        <div class="tech-row"><span>C</span><span>C++</span><span>ACADEMIC</span></div>
+      </article>
+      <article class="pcard card soon-card reveal d2">
+        <p class="mono">next_project.exe<br><span class="blink">▮</span> awaiting inspiration…</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-index mono reveal">04 // HOW I GOT HERE</span>
+      <h2 class="mask"><span class="m-in">The Journey</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><span class="tl-when">2024 · CHECKPOINT 01</span><h3>Entered Computer Engineering</h3><p>First semester, first "Hello, World!", first segfault. I didn't understand half of it — and I loved every minute.</p></div>
+      <div class="tl-item reveal"><span class="tl-when">2025 · CHECKPOINT 02</span><h3>C++ Clicked</h3><p>From fighting pointers to actually enjoying them. Small console projects, big realizations about how computers really think.</p></div>
+      <div class="tl-item now reveal"><span class="tl-when">2026 · CHECKPOINT 03 <span class="now-badge">NOW</span></span><h3>Going Public: The Web</h3><p>Learning HTML, CSS and JavaScript from the ground up — and shipping this portfolio as the first real artifact of that path.</p></div>
+      <div class="tl-item reveal"><span class="tl-when">NEXT · CHECKPOINT 04</span><h3>Level Up</h3><p>Data structures and algorithms, then a JavaScript framework. The grind continues — one commit at a time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-index mono reveal">05 // OPEN CHANNEL</span>
+      <h2 class="mask"><span class="m-in">Get In Touch</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-txt reveal">
+        <p>Have an idea, a question, or a bug worth debugging together? My inbox is always open — whether you want to collaborate, hire an eager junior, or just talk about code.</p>
+        <a class="email-pill" href="mailto:hossi3754@gmail.com">✉ hossi3754@gmail.com</a>
+        <div class="hero-socials">
+          <a href="#" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V24h-4v-8.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.27 2.2-3.27 4.5V24H8V8z"/></svg></a>
+        </div>
+      </div>
+      <form class="contact-form card reveal d1" id="contactForm">
+        <div class="field"><label for="fName">YOUR NAME</label><input id="fName" type="text" placeholder="Ada Lovelace" required></div>
+        <div class="field"><label for="fEmail">YOUR EMAIL</label><input id="fEmail" type="email" placeholder="ada@example.com" required></div>
+        <div class="field"><label for="fMsg">MESSAGE</label><textarea id="fMsg" rows="4" placeholder="// say hi, pitch an idea, report a bug…" required></textarea></div>
+        <button class="btn btn-solid" type="submit">SEND MESSAGE →</button>
+        <p class="form-note" id="formNote">// this form is a demo — wire it to Formspree or a backend later</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 HOSSEIN — BUILT BY HAND WITH <span class="mint">HTML · CSS · JS</span> /* no frameworks were harmed */</p>
+    <a class="top" href="#home">BACK TO TOP ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

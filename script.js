@@ -1,60 +1,57 @@
-/* HOSSEIN — Portfolio engine */
+/* Portfolio engine */
 const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $  = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
-/* ---------- Starfield + shooting stars ---------- */
-const cvs = $('#stars'), sc = cvs.getContext('2d');
-let W, H, starArr = [], shoots = [], nextShoot = 0;
-const TINTS = ['226,240,244', '176,240,214', '255,214,156'];
+/* ---------- Engineering grid + floating code glyphs ---------- */
+const cvs = $('#bg'), sc = cvs.getContext('2d');
+let W, H, glyphs = [];
+const TOKENS = ['</>', '{}', ';', '++', '=>', '&&', 'int', 'void', '()', '//', '::', '*', '#include', '[]'];
 
-function seedStars() {
+function seedGlyphs() {
   W = cvs.width = innerWidth; H = cvs.height = innerHeight;
-  starArr = [];
-  const n = Math.min(240, Math.round(W * H / 8000));
-  for (let i = 0; i < n; i++) starArr.push({
-    x: Math.random() * W, y: Math.random() * H,
-    r: .4 + Math.random() * 1.1, p: Math.random() * 6.28,
-    s: .4 + Math.random() * 1.3,
-    c: TINTS[Math.random() * TINTS.length | 0]
-  });
+  glyphs = [];
+  const n = Math.min(50, Math.round(W * H / 35000));
+  for (let i = 0; i < n; i++) {
+    const r = Math.random();
+    glyphs.push({
+      t: TOKENS[Math.random() * TOKENS.length | 0],
+      x: Math.random() * W,
+      y: Math.random() * H,
+      size: 10 + Math.random() * 14,
+      v: .12 + Math.random() * .25,          /* Upward movement speed */
+      sway: Math.random() * Math.PI * 2,
+      swayAmt: 6 + Math.random() * 14,
+      phase: Math.random() * Math.PI * 2,
+      alpha: .10 + Math.random() * .15,      /* Transparency */
+      color: r < .5 ? '143,163,176' : r < .85 ? '77,227,184' : '255,180,84'
+    });
+  }
 }
-function drawStarsStatic() {
+function drawGlyphsStatic() {
   sc.clearRect(0, 0, W, H);
-  for (const s of starArr) {
-    sc.globalAlpha = .6; sc.fillStyle = `rgb(${s.c})`;
-    sc.beginPath(); sc.arc(s.x, s.y, s.r, 0, 7); sc.fill();
+  for (const g of glyphs) {
+    sc.font = `500 ${g.size}px "JetBrains Mono", monospace`;
+    sc.fillStyle = `rgba(${g.color},${g.alpha})`;
+    sc.fillText(g.t, g.x, g.y);
   }
-  sc.globalAlpha = 1;
 }
-function skyLoop(t) {
+function glyphLoop(t) {
   sc.clearRect(0, 0, W, H);
-  for (const s of starArr) {
-    sc.globalAlpha = .22 + .75 * Math.abs(Math.sin(s.p + t * .0012 * s.s));
-    sc.fillStyle = `rgb(${s.c})`;
-    sc.beginPath(); sc.arc(s.x, s.y, s.r, 0, 7); sc.fill();
+  for (const g of glyphs) {
+    g.y -= g.v;
+    if (g.y < -30) { g.y = H + 30; g.x = Math.random() * W; }
+    const x = g.x + Math.sin(t * .0004 + g.sway) * g.swayAmt;
+    const a = g.alpha * (.7 + .3 * Math.sin(t * .0008 + g.phase));
+    sc.font = `500 ${g.size}px "JetBrains Mono", monospace`;
+    sc.fillStyle = `rgba(${g.color},${a})`;
+    sc.fillText(g.t, x, g.y);
   }
-  sc.globalAlpha = 1;
-  if (t > nextShoot) {
-    nextShoot = t + 4000 + Math.random() * 5000;
-    shoots.push({ x: W * (.3 + Math.random() * .7), y: H * Math.random() * .4,
-                  vx: -(6 + Math.random() * 5), vy: 3 + Math.random() * 3, life: 1 });
-  }
-  shoots = shoots.filter(sh => sh.life > 0 && sh.x > -200);
-  for (const sh of shoots) {
-    sh.x += sh.vx; sh.y += sh.vy; sh.life -= .016;
-    const g = sc.createLinearGradient(sh.x, sh.y, sh.x - sh.vx * 14, sh.y - sh.vy * 14);
-    g.addColorStop(0, `rgba(231,240,242,${sh.life})`);
-    g.addColorStop(1, 'rgba(231,240,242,0)');
-    sc.strokeStyle = g; sc.lineWidth = 1.6;
-    sc.beginPath(); sc.moveTo(sh.x, sh.y);
-    sc.lineTo(sh.x - sh.vx * 14, sh.y - sh.vy * 14); sc.stroke();
-  }
-  requestAnimationFrame(skyLoop);
+  requestAnimationFrame(glyphLoop);
 }
-seedStars();
-RM ? drawStarsStatic() : requestAnimationFrame(skyLoop);
-addEventListener('resize', () => { seedStars(); if (RM) drawStarsStatic(); });
+seedGlyphs();
+RM ? drawGlyphsStatic() : requestAnimationFrame(glyphLoop);
+addEventListener('resize', () => { seedGlyphs(); if (RM) drawGlyphsStatic(); });
 
 /* ---------- Scramble-decode title ---------- */
 const GLYPHS = '!<>-_\\/[]{}=+*^?#01';
@@ -92,7 +89,7 @@ else {
   })();
 }
 
-/* ---------- Planet + orbiting tech ring ---------- */
+/* ---------- Planet + tech ring ---------- */
 const scene = $('#scene'), tiltEl = $('#tilt');
 const chips = $$('.chip');
 const rings = $$('.ring, .ring2');
@@ -224,19 +221,31 @@ if (!RM && matchMedia('(pointer:fine)').matches) {
   });
 }
 
-/* ---------- Contact form (demo) ---------- */
+/* ---------- Contact form (Formspree) ---------- */
 const form = $('#contactForm'), note = $('#formNote');
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
   const btn = form.querySelector('button');
   btn.disabled = true; btn.textContent = 'TRANSMITTING…';
-  setTimeout(() => {
-    btn.textContent = '✓ MESSAGE LOGGED';
-    note.textContent = '// got it! (demo only — connect a backend to make it real)';
-    note.classList.add('ok');
-  }, 900);
-  setTimeout(() => {
-    btn.textContent = 'SEND MESSAGE →'; btn.disabled = false;
-    form.reset();
-  }, 3400);
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.reset();
+      btn.textContent = '✓ MESSAGE SENT';
+      note.textContent = '// thanks! your message reached my inbox.';
+      note.classList.add('ok');
+    } else {
+      const data = await res.json().catch(() => ({}));
+      btn.textContent = 'SEND MESSAGE →';
+      note.textContent = '// error: ' + (data.errors ? data.errors.map(x => x.message).join(', ') : 'something went wrong');
+    }
+  } catch {
+    btn.textContent = 'SEND MESSAGE →';
+    note.textContent = '// network error — check your connection';
+  }
+  setTimeout(() => { btn.disabled = false; btn.textContent = 'SEND MESSAGE →'; }, 4000);
 });

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HOSSEIN — Computer Engineering Student</title>
+<title>HOSportfolio</title>
 <meta name="description" content="Portfolio of Hossein — Computer Engineering student learning C++ and the web.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<canvas id="stars"></canvas>
+<canvas id="bg" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
 <div id="progress" aria-hidden="true"></div>
 
@@ -35,22 +35,25 @@
 <header class="hero wrap" id="home">
   <div class="hero-left">
     <p class="eyebrow reveal">// HELLO, WORLD — I AM</p>
-    <h1 id="heroName">HOSSEIN</h1>
+    <h1 id="heroName">HOSSEIN SIMAEI</h1>
     <p class="hello-sub reveal d1">COMPUTER ENGINEERING STUDENT</p>
     <div class="role-line reveal d2"><span class="pfx">❯</span><span id="roleText"></span><span class="caret"></span></div>
-    <p class="lead reveal d3">I turn coffee into code and bugs into lessons. Right now I'm deep-diving into <em>C++</em> and building my foundations on the <em>web</em> — this site is my lab notebook, built by hand with zero frameworks.</p>
+    <p class="lead reveal d3">I turn coffee into code and bugs into lessons. Currently diving deep into <em>C++</em> and exploring the world of <em>Web</em> development. This portfolio is my digital playground — built from scratch with pure HTML, CSS, and JavaScript. No frameworks, just curiosity and code.</p>
     <div class="hero-actions reveal d4">
       <a class="btn btn-solid" href="#projects">EXPLORE MY WORK ↓</a>
       <a class="btn btn-ghost" href="#contact">SAY HELLO</a>
     </div>
     <div class="hero-socials reveal d4">
-      <a href="#" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-      <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V24h-4v-8.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.27 2.2-3.27 4.5V24H8V8z"/></svg></a>
-      <a href="mailto:hossi3754@gmail.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
+      <a href="https://github.com/HOS8437" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      <a href="https://www.linkedin.com/in/hossein-simaei-98992044a?" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V24h-4v-8.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.27 2.2-3.27 4.5V24H8V8z"/></svg></a>
+      <a href="https://t.me/HOS1901" target="_blank" rel="noopener" aria-label="Telegram">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+</a>
+      <a href="mailto:hossi3756@gmail.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
     </div>
   </div>
 
-  <!-- Planet + orbiting tech ring (drag me!) -->
+  <!-- Planet + tech ring -->
   <div class="scene" id="scene" tabindex="0" aria-label="Interactive tech orbit — drag or use arrow keys to spin">
     <div class="orbit-float"><div class="orbit-tilt" id="tilt">
       <div class="ring ring-back clip-back"></div>
@@ -80,22 +83,22 @@
 
       <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24" fill="#e7f0f2"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span><span class="chip-tx">GITHUB</span></div></div>
 
-      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="#4de3b8" stroke-width="1.6"/><path d="M6.5 9.5l3.5 2.5-3.5 2.5" stroke="#4de3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 15.5h5" stroke="#ffb454" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="chip-tx">TERM</span></div></div>
+      <div class="chip"><div class="chip-in"><span class="chip-ic"><svg viewBox="0 0 24 24"><rect x="1" y="1" width="10.5" height="10.5" rx="1" fill="#0078D4"/><rect x="12.5" y="1" width="10.5" height="10.5" rx="1" fill="#0078D4"/><rect x="1" y="12.5" width="10.5" height="10.5" rx="1" fill="#0078D4"/><rect x="12.5" y="12.5" width="10.5" height="10.5" rx="1" fill="#0078D4"/></svg></span><span class="chip-tx">WINDOWS</span></div></div>
     </div></div>
     <p class="scene-hint"><b>⟲ DRAG THE RING</b> — SPIN THE STACK</p>
-  </div>
+  </div><br/>
 
   <div class="scroll-cue">SCROLL <i></i></div>
 </header>
 
-<!-- TICKER -->
+<!-- Moving line -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <ul>
-      <li>C++</li><li>HTML5</li><li>CSS3</li><li>JAVASCRIPT</li><li>PYTHON</li><li>GIT &amp; GITHUB</li><li>DATA STRUCTURES</li><li>ALGORITHMS</li><li>OOP</li><li>PROBLEM SOLVING</li><li>CLEAN CODE</li>
+      <li>C++</li><li>HTML5</li><li>CSS3</li><li>JAVASCRIPT</li><li>PYTHON</li><li>GIT &amp; GITHUB</li><li>DATA STRUCTURES</li><li>ALGORITHMS</li><li>Windows user</li><li>PROBLEM SOLVING</li><li>CLEAN CODE</li>
     </ul>
     <ul>
-      <li>C++</li><li>HTML5</li><li>CSS3</li><li>JAVASCRIPT</li><li>PYTHON</li><li>GIT &amp; GITHUB</li><li>DATA STRUCTURES</li><li>ALGORITHMS</li><li>OOP</li><li>PROBLEM SOLVING</li><li>CLEAN CODE</li>
+      <li>C++</li><li>HTML5</li><li>CSS3</li><li>JAVASCRIPT</li><li>PYTHON</li><li>GIT &amp; GITHUB</li><li>DATA STRUCTURES</li><li>ALGORITHMS</li><li>Windows user</li><li>PROBLEM SOLVING</li><li>CLEAN CODE</li>
     </ul>
   </div>
 </div>
@@ -110,12 +113,16 @@
     </div>
     <div class="about-grid">
       <div class="about-txt reveal">
+        <div class="profile-pic">
+        <img src="me.jpg" alt="photo of me">
+        <span class="scanline" aria-hidden="true"></span>
+        </div>
         <p>I'm a <strong>Computer Engineering student</strong> who fell in love with the moment a program finally runs. What started as curiosity about <span class="hl-m">how things work under the hood</span> turned into late nights with compilers, broken code, and the stubborn joy of fixing it.</p>
         <p>These days my energy goes into three things: sharpening my <span class="hl-a">C++</span>, learning how the <span class="hl-a">web</span> is really built, and understanding the fundamentals — data structures, logic, and how to think like an engineer.</p>
         <p>I believe in <strong>learning by building</strong>. Every project here, small or big, is a step on that path.</p>
         <div class="stats">
-          <div class="stat"><b class="count" data-to="4">0</b><span>LANGUAGES TOUCHED</span></div>
-          <div class="stat"><b class="count" data-to="12">0</b><span>MINI EXPERIMENTS</span></div>
+          <div class="stat"><b class="count" data-to="3">0</b><span>LANGUAGES TOUCHED</span></div>
+          <div class="stat"><b class="count" data-to="10">0</b><span>MINI EXPERIMENTS</span></div>
           <div class="stat"><b>∞</b><span>CURIOSITY LEVEL</span></div>
         </div>
       </div>
@@ -160,17 +167,17 @@
       <div class="panel card reveal">
         <p class="panel-title">&gt; tech_i_use()</p>
         <div class="skill" style="--lv:40%"><div class="skill-top"><span class="nm">C++</span><span class="rt"><span class="tag core">CORE</span><span class="pct count" data-to="40">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
-        <div class="skill" style="--lv:4%"><div class="skill-top"><span class="nm">HTML5</span><span class="rt"><span class="tag core">CORE</span><span class="pct count" data-to="4">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
-        <div class="skill" style="--lv:3%"><div class="skill-top"><span class="nm">CSS3</span><span class="rt"><span class="tag learn">LEARNING</span><span class="pct count" data-to="3">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+        <div class="skill" style="--lv:70%"><div class="skill-top"><span class="nm">HTML5</span><span class="rt"><span class="tag core">CORE</span><span class="pct count" data-to="70">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+        <div class="skill" style="--lv:8%"><div class="skill-top"><span class="nm">CSS3</span><span class="rt"><span class="tag learn">LEARNING</span><span class="pct count" data-to="8">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
         <div class="skill" style="--lv:10%"><div class="skill-top"><span class="nm">Python</span><span class="rt"><span class="tag">SIDEKICK</span><span class="pct count" data-to="10">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
         <div class="skill" style="--lv:5%"><div class="skill-top"><span class="nm">JavaScript</span><span class="rt"><span class="tag learn">LEARNING</span><span class="pct count" data-to="5">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
-        <div class="skill" style="--lv:60%"><div class="skill-top"><span class="nm">Git &amp; GitHub</span><span class="rt"><span class="tag learn">LEARNING</span><span class="pct count" data-to="60">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
+        <div class="skill" style="--lv:75%"><div class="skill-top"><span class="nm">Git &amp; GitHub</span><span class="rt"><span class="tag learn">LEARNING</span><span class="pct count" data-to="75">0%</span></span></div><div class="bar"><div class="fill"></div></div></div>
       </div>
       <div class="side-stack">
         <div class="panel card reveal d1">
           <p class="panel-title">&gt; currently_compiling()</p>
-          <div class="focus-item"><span class="pulse"></span><div><b>C++ Deep Dive</b><span>Pointers, memory, OOP and the STL — the real stuff.</span></div></div>
-          <div class="focus-item"><span class="pulse"></span><div><b>JavaScript &amp; the DOM</b><span>Making pages move: events, logic, and this orbit you're playing with.</span></div></div>
+          <div class="focus-item"><span class="pulse"></span><div><b>C++ Programming</b><span>Building my programming foundations through university and personal practice.</span></div></div>
+          <div class="focus-item"><span class="pulse"></span><div><b>HTML</b><span>Learning to structure web pages and applying it to my personal portfolio.</span></div></div>
           <div class="focus-item"><span class="pulse"></span><div><b>Responsive CSS</b><span>Flexbox, Grid, and layouts that survive any screen size.</span></div></div>
         </div>
         <div class="panel card reveal d2">
@@ -209,21 +216,21 @@
       </article>
       <article class="pcard card reveal d1">
         <div class="pc-top"><span class="p-num">PROJECT 02</span><span class="badge st-wip">⚙ IN PROGRESS</span></div>
-        <h3>Terminal Quest</h3>
-        <p>A text-based adventure game running entirely in the terminal: classes, save files, and a dragon made of pure ASCII.</p>
-        <div class="tech-row"><span>C++</span><span>OOP</span><span>FILE I/O</span></div>
-      </article>
-      <article class="pcard card reveal d2">
-        <div class="pc-top"><span class="p-num">PROJECT 03</span><span class="badge st-soon">◌ SOON</span></div>
-        <h3>Algo Sketchbook</h3>
-        <p>Sorting visualizers and data-structure experiments, documented as I learn them — my public lab notes.</p>
-        <div class="tech-row"><span>C++</span><span>PYTHON</span><span>DSA</span></div>
+        <h3>C++ Web Calculator</h3>
+        <p>A calculator that pairs a web interface built with HTML, CSS, and JavaScript with a calculation engine written in C++. The goal is to bring both sides together in one simple, interactive project.</p>
+        <div class="tech-row"><span>C++</span><span>HTML5</span><span>CSS3</span><span>JAVASCRIPT</span></div>
       </article>
       <article class="pcard card reveal d1">
         <div class="pc-top"><span class="p-num">PROJECT 04</span><span class="badge st-soon">◌ SOON</span></div>
-        <h3>Uni Lab Notes</h3>
-        <p>Cleaned-up university assignments and experiments, published so future-me (and you) suffers less.</p>
-        <div class="tech-row"><span>C</span><span>C++</span><span>ACADEMIC</span></div>
+        <h3>Personal Finance Web App</h3>
+        <p>A web app for managing personal finances: record income and expenses, organize transactions by category, and track a budget through a clear dashboard.</p>
+        <div class="tech-row"><span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>LOCAL STORAGE</span></div>
+      </article>
+      <article class="pcard card reveal d2">
+        <div class="pc-top"><span class="p-num">PROJECT 03</span><span class="badge st-soon">◌ SOON</span></div>
+        <h3>Personal Finance Mobile App</h3>
+        <p>A mobile app for managing personal finances: record income and expenses, organize transactions by category, and keep track of a budget with a clear, easy-to-use interface.</p>
+        <div class="tech-row"><span>FLUTTER</span><span>DART</span><span>SQLITE</span></div>
       </article>
       <article class="pcard card soon-card reveal d2">
         <p class="mono">next_project.exe<br><span class="blink">▮</span> awaiting inspiration…</p>
@@ -240,10 +247,11 @@
       <h2 class="mask"><span class="m-in">The Journey</span></h2>
     </div>
     <div class="timeline">
-      <div class="tl-item reveal"><span class="tl-when">2024 · CHECKPOINT 01</span><h3>Entered Computer Engineering</h3><p>First semester, first "Hello, World!", first segfault. I didn't understand half of it — and I loved every minute.</p></div>
-      <div class="tl-item reveal"><span class="tl-when">2025 · CHECKPOINT 02</span><h3>C++ Clicked</h3><p>From fighting pointers to actually enjoying them. Small console projects, big realizations about how computers really think.</p></div>
-      <div class="tl-item now reveal"><span class="tl-when">2026 · CHECKPOINT 03 <span class="now-badge">NOW</span></span><h3>Going Public: The Web</h3><p>Learning HTML, CSS and JavaScript from the ground up — and shipping this portfolio as the first real artifact of that path.</p></div>
-      <div class="tl-item reveal"><span class="tl-when">NEXT · CHECKPOINT 04</span><h3>Level Up</h3><p>Data structures and algorithms, then a JavaScript framework. The grind continues — one commit at a time.</p></div>
+      <div class="tl-item reveal"><span class="tl-when">OCT 2025 · CHECKPOINT 01</span><h3>Started Computer Engineering</h3><p>I began studying Computer Engineering at university, where I started exploring the foundations of computing.</p></div>
+      <div class="tl-item reveal"><span class="tl-when">NOV 2025 · CHECKPOINT 02</span><h3>My First C++ Program</h3><p>I wrote my first program: a simple “Hello, World!” in C++. That small first step sparked my interest in programming and C++.</p></div>
+      <div class="tl-item reveal"><span class="tl-when">EARLY SUMMER 2026 · CHECKPOINT 03</span><h3>Discovered Web Design</h3><p>I became curious about web design and began learning HTML. That curiosity led me to start building this portfolio as my first personal web project.</p></div>
+      <div class="tl-item now reveal"><span class="tl-when">NOW · CHECKPOINT 04 <span class="now-badge">NOW</span></span><h3>Semester Three</h3><p>I’m currently in my third semester, continuing to learn C++. Next, I plan to study CSS and explore web design in greater depth.</p></div>
+      <div class="tl-item reveal"><span class="tl-when">NEXT · CHECKPOINT 05</span><h3>Growing into Web Development</h3><p>After strengthening my C++ skills, I plan to learn CSS and build on my HTML knowledge. My goal is to explore modern web design step by step and create more complete, polished websites.</p></div>
     </div>
   </div>
 </section>
@@ -258,19 +266,24 @@
     <div class="contact-grid">
       <div class="contact-txt reveal">
         <p>Have an idea, a question, or a bug worth debugging together? My inbox is always open — whether you want to collaborate, hire an eager junior, or just talk about code.</p>
-        <a class="email-pill" href="mailto:hossi3754@gmail.com">✉ hossi3754@gmail.com</a>
+        <a class="email-pill" href="mailto:hossi3756@gmail.com">✉ hossi3756@gmail.com</a>
         <div class="hero-socials">
-          <a href="#" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V24h-4v-8.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.27 2.2-3.27 4.5V24H8V8z"/></svg></a>
+          <a href="https://github.com/HOS8437" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          <a href="https://www.linkedin.com/in/hossein-simaei-98992044a?" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.06c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.77 2.65 4.77 6.1V24h-4v-8.5c0-2.03-.04-4.64-2.83-4.64-2.83 0-3.27 2.2-3.27 4.5V24H8V8z"/></svg></a>
+          <a href="https://t.me/HOS1901" target="_blank" rel="noopener" aria-label="Telegram">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+</a>
         </div>
       </div>
-      <form class="contact-form card reveal d1" id="contactForm">
-        <div class="field"><label for="fName">YOUR NAME</label><input id="fName" type="text" placeholder="Ada Lovelace" required></div>
-        <div class="field"><label for="fEmail">YOUR EMAIL</label><input id="fEmail" type="email" placeholder="ada@example.com" required></div>
-        <div class="field"><label for="fMsg">MESSAGE</label><textarea id="fMsg" rows="4" placeholder="// say hi, pitch an idea, report a bug…" required></textarea></div>
-        <button class="btn btn-solid" type="submit">SEND MESSAGE →</button>
-        <p class="form-note" id="formNote">// this form is a demo — wire it to Formspree or a backend later</p>
-      </form>
+      <form class="contact-form card reveal d1" id="contactForm"
+      action="https://formspree.io/f/xljjallz" method="POST">
+  <div class="field"><label for="fName">YOUR NAME</label><input id="fName" name="name" type="text" placeholder="Hossein Simaei" required></div>
+  <div class="field"><label for="fEmail">YOUR EMAIL</label><input id="fEmail" name="email" type="email" placeholder="hos@example.com" required></div>
+  <div class="field"><label for="fMsg">MESSAGE</label><textarea id="fMsg" name="message" rows="4" required></textarea></div>
+  <input type="hidden" name="_subject" value="New message from your portfolio!">
+  <button class="btn btn-solid" type="submit">SEND MESSAGE →</button>
+  <p class="form-note" id="formNote">your message goes straight to my inbox</p>
+</form>
     </div>
   </div>
 </section>
@@ -278,7 +291,7 @@
 
 <footer>
   <div class="wrap">
-    <p>© 2026 HOSSEIN — BUILT BY HAND WITH <span class="mint">HTML · CSS · JS</span> /* no frameworks were harmed */</p>
+    <p>© 2026 HOSSEIN — BUILT BY HAND WITH <span class="mint">HTML · CSS · JS</span></p>
     <a class="top" href="#home">BACK TO TOP ↑</a>
   </div>
 </footer>
